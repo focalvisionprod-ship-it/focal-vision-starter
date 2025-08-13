@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Focal Vision brand colours */
-:root {
-  --color-primary: #fc4405; /* brand orange */
-  --color-tertiary: #c63603; /* darker hover */
-}
-
-html, body { height: 100%; background: #0b0b0b; }
-body { color: #0f172a; } /* slate-900 for text in cards */
+:root { --color-primary:#fc4405; --color-tertiary:#c63603; }
+html,body{height:100%;background:#0b0b0b}
+body{color:#0f172a}
+a{ text-underline-offset:2px }

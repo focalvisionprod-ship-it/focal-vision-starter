@@ -1,36 +1,18 @@
-# Focal Vision — Starter (Next.js + Tailwind)
+# Focal Vision — Full Website Starter
+Multi-page site with Services, Contact, Start Your Project, Thank You, robots.txt and sitemap.xml.
 
-A ready-to-deploy mini site for **Focal Vision** with a **Start Your Project** form.
+## Deploy
+Upload to GitHub (or replace your current repo) → Vercel will deploy automatically.
 
-## Option A — Deploy to a subdomain (e.g., start.focalvision.com.au)
+## Edit brand/SEO
+- Colours: `app/globals.css`
+- Metadata/JSON-LD + domain: `app/layout.js` (replace https://example.com after you connect your real domain)
+- Service copy: `data/services.js`
+- Footer NAP: `components/Footer.js`
 
-1) Create a GitHub repo and upload these files.
-2) Go to https://vercel.com → Import the repo → Deploy.
-3) In Vercel → Project Settings → Domains → add your subdomain (e.g., `start.focalvision.com.au`).
-4) Vercel will show a **CNAME** target. Create that CNAME in your DNS for `start`.
-5) When DNS propagates, the subdomain is live.
-6) From WordPress, add a menu/button linking to `https://start.focalvision.com.au/(auth)/start-your-project`.
+## Forms
+- All forms POST to `/api/start-project` and redirect to `/thank-you`.
+- To email submissions, replace the route with a Resend-powered handler (see earlier instructions).
 
-## Option B — Run locally
-
-1) Install Node.js LTS from https://nodejs.org
-2) In this folder: `npm install`
-3) Dev server: `npm run dev`
-4) Visit http://localhost:3000
-
-## Edit these files
-
-- Brand colours: `app/globals.css` (uses `#fc4405`)
-- Form page: `app/(auth)/start-your-project/page.js`
-- Form handler: `app/api/start-project/route.js`
-- Home page: `app/page.js`
-- Logo: `public/focal-vision-logo.svg`
-
-## Hook up email or Google Sheets
-
-- Email: add Resend (https://resend.com) in the route handler and send the form data
-- Google Sheet: use a webhook service (e.g., sheet.best) or a small serverless function to write rows
-
-## GA4 (optional)
-
-- In `app/layout.js`, replace `G-XXXXXXX` with your GA4 ID or remove the two GA script tags.
+## Local dev
+`npm install` → `npm run dev` → http://localhost:3000
